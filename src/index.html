@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="bulma.min.css"/>
+    <link rel="stylesheet" href="index.css"/>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
+    <title>Robotik SMKN 8 MALANG</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="interior">
+        <button class="btn" id="firststart">Start</button>
+      </div>
+    </div>
+
+    <div id="open-crud" class="modal-window">
+      <div>
+          <article class="modal-container">
+            <header id="header" class="modal-container-header" >
+              <h1 class="modal-container-title">
+                  Add Data
+              </h1>
+              <button type="button" id="icon_button1" class="icon-button" >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                  <path fill="none" d="M0 0h24v24H0z" />
+                  <path fill="currentColor" d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z" />
+                </svg>
+              </button>
+            </header>
+            <section class="modal-container-body">
+              <div class="post-content">
+                <div class="form_area">
+                  <form id="form_submit" autocomplete="off">
+                    <div class="form_group">
+                      <label for="Times" class="sub_title">Times</label><label class="validation-error hide" id="fullNameValidationError">This field is required.</label><br>
+                      <input type="time" class="form_style" id="Times" name="Times" placeholder="Waktu Aktif" />
+                    </div>
+                    <div class="form_group">
+                        <label for="Runtimes" class="sub_title">Durasi</label><br>
+                        <input type="number" class="form_style" id="Runtimes" name="Runtimes" placeholder="Durasi" min="1" max="60"/>
+                    </div>
+                    <div class="form_group">
+                        <label for="Sector" class="sub_title">Sector</label><br>
+                        <input type="number" class="form_style" id="Sector" name="Sector" placeholder="Sector" min="1"/>
+                    </div>
+                    <div class="form_group">
+                      <label for="Command" class="sub_title">Command</label><br>
+                      <input type="button" class="button is-primary" id="CommandON" name="CommandON" value="ON"/>
+                      <input type="button" class="button is-primary" id="CommandOFF" name="CommandOFF" value="OFF"/>
+                    </div>
+                  
+                </div>
+              </div>
+            </section>
+            <footer class="modal-container-footer"s>
+                    <input  type="submit" class="button is-ghost" value="submit" id="submit" >
+                    <button class="button is-primary" id="batal">Batal</button>
+                  </form>
+            </footer>
+          </article>
+      </div>
+    </div>
+
+    <div id="open-modal" class="modal-window">
+      <div>
+        <article class="modal-container">
+          <header class="modal-container-header">
+            <h1 class="modal-container-title">
+                System Panel Table
+            </h1>
+            <time class="modal-container-title" id="time">00:00:00</time>
+            <button id="icon_button" type="button" class="icon-button" >
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+                <path fill="none" d="M0 0h24v24H0z" />
+                <path fill="currentColor" d="M12 10.586l4.95-4.95 1.414 1.414-4.95 4.95 4.95 4.95-1.414 1.414-4.95-4.95-4.95 4.95-1.414-1.414 4.95-4.95-4.95-4.95L7.05 5.636z" />
+              </svg>
+            </button>
+          </header>
+          <section class="modal-container-body">
+            <div class="post-content">
+                <table id="employeeList">
+                  <thead>
+                    <tr>
+                      <th>No.</th>
+                      <th>Times</th>
+                      <th>Runtimes</th>
+                      <th>Sector</th>
+                      <th>Command</th>
+                    </tr>
+                  </thead>
+                  <tbody align="center">
+
+                  </tbody>
+                </table>
+            </div>
+          </section>
+          <footer class="modal-container-footer">
+            <button class="button is-ghost3" id="addData">Add Data</button>
+          </footer>
+        </article>
+      </div>
+    </div>
+
+    <script src="renderer.js"></script>
+  </body>
+</html>
